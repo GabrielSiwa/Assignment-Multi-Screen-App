@@ -1,14 +1,21 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import { StyleSheet, Text, View } from "react-native";
+import React from "react";
 
-const subscription = () => {
+const Subscription = () => {
   return (
-    <View>
-      <Text>subscription</Text>
+    <View style={styles.container}>
+      <Text>Subscription Page</Text>
     </View>
-  )
-}
+  );
+};
 
-export default subscription
+export default Subscription;
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#fff",
+  },
+});
