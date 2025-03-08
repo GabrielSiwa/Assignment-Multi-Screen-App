@@ -13,6 +13,7 @@
 
 import { Tabs } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
+import { View } from "react-native";
 
 console.log("✅ Tab Navigation is loading!");
 
@@ -80,12 +81,35 @@ const Layout = () => {
       />
 
       {/* Subscriptions Tab */}
-      <Tabs.Screen
+      {/* <Tabs.Screen
         name="subscription"
         options={{
           title: "Subscriptions",
           tabBarIcon: ({ color, size }) => (
             <Ionicons name="library-outline" size={size} color={color} />
+          ),
+        }}
+      /> */}
+      <Tabs.Screen
+        name="subscription"
+        options={{
+          title: "Subscriptions",
+          tabBarIcon: ({ color, size }) => (
+            <View style={{ position: "relative" }}>
+              {/* Box Shape */}
+              <Ionicons name="folder-open-outline" size={size} color={color} />
+              {/* Play Icon Overlay */}
+              <Ionicons
+                name="play-outline"
+                size={size / 2}
+                color={color}
+                style={{
+                  position: "absolute",
+                  top: size / 4,
+                  left: size / 4,
+                }}
+              />
+            </View>
           ),
         }}
       />
@@ -94,9 +118,9 @@ const Layout = () => {
       <Tabs.Screen
         name="profile"
         options={{
-          title: "Library",
+          title: "Profile",
           tabBarIcon: ({ color, size }) => (
-            <Ionicons name="albums-outline" size={size} color={color} />
+            <Ionicons name="person-circle-outline" size={size} color={color} />
           ),
         }}
       />
