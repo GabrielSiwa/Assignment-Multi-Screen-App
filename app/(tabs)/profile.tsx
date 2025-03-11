@@ -27,22 +27,33 @@ const historyVideos = [
   {
     id: "2",
     title: "iPhone Airpods Max Unboxing & Review",
-    thumbnail: require("../../assets/images/history2.png"), // ✅ Local image
+    thumbnail: require("../../assets/images/history2.png"),
+  },
+  {
+    id: "3",
+    title: "Tailwind Crash Course | Project From Scratch",
+    thumbnail: require("../../assets/images/history3.png"),
   },
 ];
 
 // Playlists
 const playlists = [
   {
-    id: "3",
-    title: "React Native Tutorial - 19 Image",
+    id: "1",
+    title: "Liked Videos",
     thumbnail: require("../../assets/images/react_native.png"),
     videoCount: 4, //
   },
   {
-    id: "4",
+    id: "2",
     title: "Watch Later",
-    thumbnail: require("../../assets/images/react_navigation.png"), // ✅ Local image
+    thumbnail: require("../../assets/images/react_navigation.png"),
+  },
+  {
+    id: "3",
+    title: "Liked videos",
+    thumbnail: require("../../assets/images/react_navigation.png"),
+    videoCount: 20,
   },
 ];
 
@@ -97,14 +108,21 @@ const ProfileScreen = () => {
       </View>
       <View style={styles.listContainer}>
         <FlatList
-          data={historyVideos}
+          data={historyVideos} // or playlists
           horizontal
           showsHorizontalScrollIndicator={false}
           keyExtractor={(item) => item.id}
           renderItem={({ item }) => (
             <TouchableOpacity style={styles.videoItem}>
               <Image source={item.thumbnail} style={styles.fixedImage} />
-              <Text style={styles.videoTitle}>{item.title}</Text>
+              <View style={styles.titleContainer}>
+                <Text style={styles.videoTitle} numberOfLines={1}>
+                  {item.title}
+                </Text>
+                <TouchableOpacity>
+                  <Ionicons name="ellipsis-vertical" size={20} color="black" />
+                </TouchableOpacity>
+              </View>
             </TouchableOpacity>
           )}
         />
@@ -129,7 +147,14 @@ const ProfileScreen = () => {
           renderItem={({ item }) => (
             <TouchableOpacity style={styles.videoItem}>
               <Image source={item.thumbnail} style={styles.fixedImage} />
-              <Text style={styles.videoTitle}>{item.title}</Text>
+              <View style={styles.titleContainer}>
+                <Text style={styles.videoTitle} numberOfLines={1}>
+                  {item.title}
+                </Text>
+                <TouchableOpacity>
+                  <Ionicons name="ellipsis-vertical" size={20} color="black" />
+                </TouchableOpacity>
+              </View>
             </TouchableOpacity>
           )}
         />
@@ -257,5 +282,12 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: "500",
     marginTop: 5,
+  },
+  titleContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    marginTop: 5,
+    width: 140, // Ensure it fits inside the card
   },
 });
