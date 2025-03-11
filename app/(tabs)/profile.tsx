@@ -161,7 +161,7 @@ const ProfileScreen = () => {
       </View>
 
       {/* Divider */}
-      <View style={styles.divider} />
+      {/* <View style={styles.divider} /> */}
 
       {/* Additional Sections (Fixed Visibility) */}
       <View style={styles.additionalSections}>
