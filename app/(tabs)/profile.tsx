@@ -22,12 +22,12 @@ const historyVideos = [
   {
     id: "1",
     title: "Mastering Mobile Application Development - Course Overview",
-    thumbnail: require("../../assets/images/history1.png"), // ✅ Local image
+    thumbnail: require("../../assets/images/history2.png"), // ✅ Local image
   },
   {
     id: "2",
     title: "iPhone Airpods Max Unboxing & Review",
-    thumbnail: require("../../assets/images/history2.png"),
+    thumbnail: require("../../assets/images/history1.png"),
   },
   {
     id: "3",
