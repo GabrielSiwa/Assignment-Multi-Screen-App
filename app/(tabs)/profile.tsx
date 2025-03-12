@@ -84,18 +84,21 @@ const ProfileScreen = () => {
       </View>
 
       {/* Quick Actions (Fixed Alignment) */}
-      <View style={styles.quickActionsContainer}>
-        {[
-          { title: "Switch account", icon: "person-outline" },
-          { title: "Google Account", icon: "logo-google" },
-          { title: "Turn on Incognito", icon: "eye-outline" },
-        ].map((action, index) => (
-          <TouchableOpacity key={index} style={styles.quickButton}>
-            <Ionicons name={action.icon} size={20} color="black" />
-            <Text style={styles.quickText}>{action.title}</Text>
-          </TouchableOpacity>
-        ))}
-      </View>
+      <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+        <View style={styles.quickActionsContainer}>
+          {[
+            { title: "Switch account", icon: "person-outline" },
+            { title: "Google Account", icon: "logo-google" },
+            { title: "Turn on Incognito", icon: "eye-outline" },
+          ].map((action, index) => (
+            <TouchableOpacity key={index} style={styles.quickButton}>
+              <Ionicons name={action.icon} size={20} color="black" />
+              <Text style={styles.quickText}>{action.title}</Text>
+            </TouchableOpacity>
+          ))}
+        </View>
+      </ScrollView>
+
       {/* Divider */}
       {/* <View style={styles.divider} /> */}
 
@@ -162,8 +165,6 @@ const ProfileScreen = () => {
 
       {/* Divider */}
       {/* <View style={styles.divider} /> */}
-
-      {/* Additional Sections (Fixed Visibility) */}
       <View style={styles.additionalSections}>
         {additionalSections.map((item) =>
           item.isDivider ? (
